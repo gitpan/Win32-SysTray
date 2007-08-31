@@ -1,5 +1,5 @@
 package Win32::SysTray;
-$VERSION = '0.10';
+$VERSION = '0.11';
 
 =pod
 
@@ -112,6 +112,7 @@ sub new {
 			-name   => "SysTray",
 			-icon   => $self->{trayicon},
 			-tip    => $self->{tooltip},
+			-id		=> 1234
 	);
 	
 
@@ -169,6 +170,5 @@ sub runApplication {
 	my $self = shift;
 	Win32::GUI::Dialog();
 }
-
 
 return 1;

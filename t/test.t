@@ -1,11 +1,22 @@
 #!/usr/bin/perl -w
 use strict;
-use Test;
-BEGIN { plan tests => 2 }
+use Test; 
+BEGIN { plan tests => 3 }
+use Win32::SysTray; ok(1);               
+use File::Basename;
+use File::Spec::Functions qw[ rel2abs ];
 
-use Win32::SysTray; ok(1); 
+my $tray = new Win32::SysTray (
+	'icon' => rel2abs(dirname($0)).'\icon.ico',
+	'single' => 1,
+); ok(2);
 
-my $tray = new Win32::SysTray; ok(2); 
+$tray->setMenu (
+	"> &Test" => sub { print "Hello from the Tray\n"; },
+	">-"	  => 0,
+	"> E&xit" => sub { return -1 },
+); ok(3);
 
 exit;
+
 __END__

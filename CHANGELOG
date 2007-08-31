@@ -1,2 +1,4 @@
 2007-08-29
-	created distrib for CPAN
+	VERSION: 0.10 - created distrib for CPAN
+2007-08-31
+	VERSION: 0.11 - corrected test script + adding new test
