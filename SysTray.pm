@@ -1,5 +1,5 @@
 package Win32::SysTray;
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 =pod
 
@@ -66,18 +66,19 @@ sub new {
 	my $class = shift;
 	my %opt = @_;
 	my $self  = {
-	  	'caller'  => caller(),
-		'name'    => $opt{name} || 'MyTray',
-		'tooltip' => $opt{tooltip} || $opt{name},
-		'icon'	  => $opt{icon},
-		'single'  => $opt{single} || 0,
-		'popup'   => undef,
-		'menu'    => [
+	  	caller  => caller(),
+		popup   => undef,
+		menu    => [
 			"tray"   		=> "tray",
 			" > E&xit"		=> "Exit",
 		],
 	};
-		
+	
+	$self->{name}    = $opt{name} || 'MyTray';
+	$self->{tooltip} = $opt{tooltip} || $self->{name};
+	$self->{icon}	 = $opt{icon};
+	$self->{single}  = $opt{single} || 0;
+	
 	if (! -f $self->{icon}) {
 		croak "Error - please pass valid icon to constructor!\n";
 	}
@@ -97,7 +98,7 @@ sub new {
 		-height => 0,
 		-name   => "Main",
 		-text   => $self->{name},
-	);
+	);	
 	
 	$self->{trayicon} = new Win32::GUI::Icon($self->{icon});
 	if (! $self->{trayicon}) {
@@ -112,7 +113,6 @@ sub new {
 			-name   => "SysTray",
 			-icon   => $self->{trayicon},
 			-tip    => $self->{tooltip},
-			-id		=> 1234
 	);
 	
 

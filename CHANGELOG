@@ -2,3 +2,5 @@
 	VERSION: 0.10 - created distrib for CPAN
 2007-08-31
 	VERSION: 0.11 - corrected test script + adding new test
+2007-09-01
+	VERSION: 0.12 - corrected constructor (tooltip was not working)
