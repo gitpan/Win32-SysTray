@@ -1,9 +1,11 @@
 use ExtUtils::MakeMaker;
 use strict;
+use diagnostics;
 
-WriteMakefile(
+ExtUtils::MakeMaker::WriteMakefile(
 	'NAME'  => 'Win32::SysTray',
 	'VERSION_FROM'  => 'SysTray.pm',
+    'PREREQ_FATAL' => 1,
 	'PREREQ_PM' => {
         'Test' => 0,
         'Win32' => 0,

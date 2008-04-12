@@ -6,3 +6,5 @@
 	VERSION: 0.12 - corrected constructor (tooltip was not working)
 2008-04-11
 	VERSION: 0.14 - added all the Win32::XXX modules to the prereqs
+2008-04-12
+	VERSION: 0.16 - added prereqs_fatal option in Makefile.pl
