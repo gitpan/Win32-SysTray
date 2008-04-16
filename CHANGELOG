@@ -12,3 +12,4 @@
 	VERSION: 0.17 - added META.yml
 2008-04-16
 	VERSION: 0.18 - changed "use Win32::GUI;" to "use Win32::GUI()" in SysTray.pm
+	VERSION: 0.19 - corrected version number

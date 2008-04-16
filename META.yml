@@ -1,7 +1,7 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Win32-SysTray
-version:      0.16
+version:      0.19
 version_from: SysTray.pm
 installdirs:  lib
 requires:

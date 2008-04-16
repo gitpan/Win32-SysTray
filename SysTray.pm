@@ -1,5 +1,5 @@
 package Win32::SysTray;
-$VERSION = '0.16';
+$VERSION = '0.19';
 
 =pod
 
