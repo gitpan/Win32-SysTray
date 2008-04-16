@@ -43,7 +43,7 @@ Andreas Mahnke
 use strict;
 
 use Win32 ();
-use Win32::GUI;
+use Win32::GUI ();
 use Win32::Mutex;
 use Carp;
 
