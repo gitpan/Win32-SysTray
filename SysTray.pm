@@ -1,5 +1,5 @@
 package Win32::SysTray;
-$VERSION = '0.19';
+$VERSION = '0.20';
 
 =pod
 
@@ -41,9 +41,8 @@ Andreas Mahnke
 =cut
 
 use strict;
-
 use Win32 ();
-use Win32::GUI ();
+use Win32::GUI qw(MB_ICONINFORMATION);
 use Win32::Mutex;
 use Carp;
 
@@ -134,7 +133,8 @@ sub new {
 	*{$self->{caller}."::Exit_Click"} = *{"Exit_Click"};
 		
 	bless($self,$class);
-  	return $self;	
+  
+  return $self;	
 }
 
 =head2 setMenu
@@ -168,7 +168,7 @@ sub setMenu (@) {
 
 sub runApplication {
 	my $self = shift;
-	Win32::GUI::Dialog();
+	eval { Win32::GUI::Dialog() };
 }
 
 return 1;

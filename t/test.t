@@ -1,5 +1,6 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 use strict;
+use warnings;
 use Test; 
 BEGIN { plan tests => 3 }
 use Win32::SysTray; ok(1);               
